@@ -245,7 +245,7 @@ declare module PlayFabMultiplayerModels {
     export interface CancelAllMatchmakingTicketsForPlayerRequest extends PlayFabModule.IPlayFabRequestCommon {
         // The entity key of the player whose tickets should be canceled.
         Entity?: EntityKey;
-        // The Id of the queue from which a player's tickets should be canceled.
+        // The name of the queue from which a player's tickets should be canceled.
         QueueName: string;
 
     }
@@ -261,7 +261,7 @@ declare module PlayFabMultiplayerModels {
 
     // https://api.playfab.com/Documentation/Multiplayer/datatype/PlayFab.Multiplayer.Models/PlayFab.Multiplayer.Models.CancelMatchmakingTicketRequest
     export interface CancelMatchmakingTicketRequest extends PlayFabModule.IPlayFabRequestCommon {
-        // The Id of the queue to join.
+        // The name of the queue the ticket is in.
         QueueName: string;
         // The Id of the ticket to find a match for.
         TicketId: string;
@@ -680,7 +680,7 @@ declare module PlayFabMultiplayerModels {
         // Determines whether the matchmaking attributes will be returned as an escaped JSON string or as an un-escaped JSON
         // object.
         EscapeObject: boolean;
-        // The Id of the queue to find a match for.
+        // The name of the queue to find a match for.
         QueueName: string;
         // The Id of the ticket to find a match for.
         TicketId: string;
@@ -720,7 +720,7 @@ declare module PlayFabMultiplayerModels {
         EscapeObject: boolean;
         // The Id of a match.
         MatchId: string;
-        // The Id of the queue to join.
+        // The name of the queue to join.
         QueueName: string;
         // Determines whether the matchmaking attributes for each user should be returned in the response for match request.
         ReturnMemberAttributes: boolean;
@@ -830,7 +830,7 @@ declare module PlayFabMultiplayerModels {
     export interface JoinMatchmakingTicketRequest extends PlayFabModule.IPlayFabRequestCommon {
         // The User who wants to join the ticket. Their Id must be listed in PlayFabIdsToMatchWith.
         Member: MatchmakingPlayer;
-        // The Id of the queue to join.
+        // The name of the queue to join.
         QueueName: string;
         // The Id of the ticket to find a match for.
         TicketId: string;
@@ -952,7 +952,7 @@ declare module PlayFabMultiplayerModels {
     export interface ListMatchmakingTicketsForPlayerRequest extends PlayFabModule.IPlayFabRequestCommon {
         // The entity key for which to find the ticket Ids.
         Entity?: EntityKey;
-        // The Id of the queue to find a match for.
+        // The name of the queue to find a match for.
         QueueName: string;
 
     }
@@ -1053,7 +1053,7 @@ declare module PlayFabMultiplayerModels {
         Attributes?: MatchmakingPlayerAttributes;
         // The entity key of the matchmaking user.
         Entity: EntityKey;
-        // The Id of the team the User has been assigned to by matchmaking.
+        // The Id of the team the User is assigned to.
         TeamId?: string;
 
     }
@@ -1064,6 +1064,8 @@ declare module PlayFabMultiplayerModels {
         BuildId?: string;
         // Maximum number of players in a match.
         MaxMatchSize: number;
+        // Maximum number of players in a ticket.
+        MaxTicketSize?: number;
         // Minimum number of players in a match.
         MinMatchSize: number;
         // Unique identifier for a Queue. Chosen by the developer.
@@ -1228,9 +1230,11 @@ declare module PlayFabMultiplayerModels {
     // https://api.playfab.com/Documentation/Multiplayer/datatype/PlayFab.Multiplayer.Models/PlayFab.Multiplayer.Models.ServerDetails
     export interface ServerDetails {
         // The IPv4 address of the virtual machine that is hosting this multiplayer server.
-        IPV4Address: string;
+        IPV4Address?: string;
         // The ports the multiplayer server uses.
-        Ports: Port[];
+        Ports?: Port[];
+        // The server's region.
+        Region?: string;
 
     }
 
