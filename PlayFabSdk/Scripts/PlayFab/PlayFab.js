@@ -4,7 +4,7 @@ var url = require("url");
 var https = require("https");
 
 exports.sdk_version = "2.37.191015";
-exports.buildIdentifier = "jbuild_nodesdk__sdk-genericslave-1_1";
+exports.buildIdentifier = "jbuild_nodesdk__sdk-genericslave-2_0";
 
 var settings = exports.settings = {
     productionUrl: ".playfabapi.com",
@@ -71,7 +71,7 @@ exports.MakeRequest = function (urlStr, request, authType, authValue, callback) 
     if (options.protocol !== "https:")
         throw "Unsupported protocol: " + options.protocol;
     options.method = "POST";
-    options.port = 443;
+    options.port = options.port || 443;
     options.headers = {
         "Content-Type": "application/json",
         "Content-Length": requestBody.length,
