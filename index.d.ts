@@ -7,6 +7,7 @@
 /// <reference path="Scripts/typings/PlayFab/PlayFabCloudScript.d.ts" />
 /// <reference path="Scripts/typings/PlayFab/PlayFabData.d.ts" />
 /// <reference path="Scripts/typings/PlayFab/PlayFabEvents.d.ts" />
+/// <reference path="Scripts/typings/PlayFab/PlayFabExperimentation.d.ts" />
 /// <reference path="Scripts/typings/PlayFab/PlayFabGroups.d.ts" />
 /// <reference path="Scripts/typings/PlayFab/PlayFabLocalization.d.ts" />
 /// <reference path="Scripts/typings/PlayFab/PlayFabMultiplayer.d.ts" />

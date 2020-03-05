@@ -4,9 +4,9 @@
   "description": "Playfab SDK for node.js applications",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@types/node": "^9.3.0",
+    "@types/node": "^9.6.55",
     "nodeunit": "0.9.1",
-    "typescript": "^2.6.2"
+    "typescript": "^2.9.2"
   },
   "scripts": {
     "test": ".\\test\\run.bat"
